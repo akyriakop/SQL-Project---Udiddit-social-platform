@@ -7,7 +7,8 @@ The schema allows posts to be created by registered users on certain topics, and
 # Create the DDL for your new schema
 Having done this initial investigation and assessment, your next goal is to dive deep into the heart of the problem and create a new schema for Udiddit. Your new     schema should at least reflect fixes to the shortcomings you pointed to in the previous exercise. To help you create the new schema, a few guidelines are provided to   you:
 
-1.	Guideline #1: here is a list of features and specifications that Udiddit needs in order to support its website and administrative interface:
+1.Guideline #1: here is a list of features and specifications that Udiddit needs in order to support its website and administrative interface:
+
   a.	Allow new users to register:
    i.	Each username has to be unique
    ii.	Usernames can be composed of at most 25 characters
