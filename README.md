@@ -5,7 +5,7 @@ Udiddit, a social news aggregation, web content rating, and discussion website, 
 The schema allows posts to be created by registered users on certain topics, and can include a URL or a text content. It also allows registered users to cast an upvote (like) or downvote (dislike) for any forum post that has been created. In addition to this, the schema also allows registered users to add comments on posts.
 
 # Create the DDL for your new schema
-  Having done this initial investigation and assessment, your next goal is to dive deep into the heart of the problem and create a new schema for Udiddit.  Your new     schema should at least reflect fixes to the shortcomings you pointed to in the previous exercise. To help you create the new schema, a few guidelines are provided to   you:
+Having done this initial investigation and assessment, your next goal is to dive deep into the heart of the problem and create a new schema for Udiddit. Your new     schema should at least reflect fixes to the shortcomings you pointed to in the previous exercise. To help you create the new schema, a few guidelines are provided to   you:
 
 1.	Guideline #1: here is a list of features and specifications that Udiddit needs in order to support its website and administrative interface:
   a.	Allow new users to register:
