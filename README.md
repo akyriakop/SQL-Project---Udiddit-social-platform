@@ -11,8 +11,11 @@ Having done this initial investigation and assessment, your next goal is to dive
 
   a.	Allow new users to register:
    i.	Each username has to be unique
+   
    ii.	Usernames can be composed of at most 25 characters
+   
    iii.	Usernames can’t be empty
+   
    iv.	We won’t worry about user passwords for this project
 	
   b.	Allow registered users to create new topics:
