@@ -41,7 +41,7 @@ Having done this initial investigation and assessment, your next goal is to dive
    
      iv.If a topic gets deleted, all the posts associated with it should be automatically deleted too.
    
-   v.	If the user who created the post gets deleted, then the post will remain, but it will become dissociated from that user.
+     v.If the user who created the post gets deleted, then the post will remain, but it will become dissociated from that user.
    
    
   d.	Allow registered users to comment on existing posts:
