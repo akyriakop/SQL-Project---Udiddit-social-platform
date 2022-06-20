@@ -11,24 +11,24 @@ Having done this initial investigation and assessment, your next goal is to dive
 
   a.	Allow new users to register:
   
-   i.	Each username has to be unique
+     i.	Each username has to be unique
    
-   ii.	Usernames can be composed of at most 25 characters
+     ii. Usernames can be composed of at most 25 characters
    
-   iii.	Usernames can’t be empty
+     iii. Usernames can’t be empty
    
-   iv.	We won’t worry about user passwords for this project
+     iv. We won’t worry about user passwords for this project
    
 	
   b.	Allow registered users to create new topics:
   
-   i.	Topic names have to be unique.
+     i.	Topic names have to be unique.
    
-   ii.	The topic’s name is at most 30 characters
+     ii. The topic’s name is at most 30 characters
    
-   iii.	The topic’s name can’t be empty
+     iii. The topic’s name can’t be empty
    
-   iv.	Topics can have an optional description of at most 500 characters.
+     iv. Topics can have an optional description of at most 500 characters.
    
    
   c.	Allow registered users to create new posts on existing topics:
@@ -37,7 +37,7 @@ Having done this initial investigation and assessment, your next goal is to dive
    
      ii.	The title of a post can’t be empty.
    
-   iii.	Posts should contain either a URL or a text content, but not both.
+     iii.	Posts should contain either a URL or a text content, but not both.
    
    iv.	If a topic gets deleted, all the posts associated with it should be automatically deleted too.
    
