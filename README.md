@@ -18,6 +18,7 @@ Having done this initial investigation and assessment, your next goal is to dive
    iii.	Usernames can’t be empty
    
    iv.	We won’t worry about user passwords for this project
+   
 	
   b.	Allow registered users to create new topics:
   
@@ -28,6 +29,7 @@ Having done this initial investigation and assessment, your next goal is to dive
    iii.	The topic’s name can’t be empty
    
    iv.	Topics can have an optional description of at most 500 characters.
+   
    
   c.	Allow registered users to create new posts on existing topics:
   
@@ -41,6 +43,7 @@ Having done this initial investigation and assessment, your next goal is to dive
    
    v.	If the user who created the post gets deleted, then the post will remain, but it will become dissociated from that user.
    
+   
   d.	Allow registered users to comment on existing posts:
   
    i.	A comment’s text content can’t be empty.
@@ -52,6 +55,7 @@ Having done this initial investigation and assessment, your next goal is to dive
    iv.	If the user who created the comment gets deleted, then the comment will remain, but it will become dissociated from that user.
    
    v.	If a comment gets deleted, then all its descendants in the thread structure should be automatically deleted too.
+   
    
   e.	Make sure that a given user can only vote once on a given post:
   
