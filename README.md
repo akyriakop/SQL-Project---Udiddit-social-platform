@@ -33,9 +33,9 @@ Having done this initial investigation and assessment, your next goal is to dive
    
   c.	Allow registered users to create new posts on existing topics:
   
-   i.	Posts have a required title of at most 100 characters
+     i.	Posts have a required title of at most 100 characters
    
-   ii.	The title of a post can’t be empty.
+     ii.	The title of a post can’t be empty.
    
    iii.	Posts should contain either a URL or a text content, but not both.
    
