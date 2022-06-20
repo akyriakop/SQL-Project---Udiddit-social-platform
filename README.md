@@ -11,9 +11,9 @@ Having done this initial investigation and assessment, your next goal is to dive
 
   a.	Allow new users to register:
   
-     i.	Each username has to be unique
+     i.Each username has to be unique
    
-     ii. Usernames can be composed of at most 25 characters
+     ii.Usernames can be composed of at most 25 characters
    
      iii. Usernames can’t be empty
    
