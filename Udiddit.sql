@@ -24,6 +24,25 @@ CREATE TABLE "posts"(
     "user_id" INTEGER REFERENCES "users" ON DELETE SET NULL,
     CONSTRAINT "has_title" CHECK(LENGTH(TRIM("title"))>0),
     CONSTRAINT "url_text" CHECK (("url" IS NULL AND "text_content" IS NOT NULL) 
-    OR ("url" IS NOT NULL AND "text_content" IS NULL))
+    OR ("url" IS NOT NULL AND "text_content" IS NULL)) 
 
+);
+CREATE INDEX ON "posts" (LOWER("title") VARCHAR_PATTERN_OPS);
+
+CREATE TABLE "comments" (
+    "id" SERIAL PRIMARY KEY,
+    "text" VARCHAR NOT NULL,
+    "user_id" INTEGER REFERENCES "users" ON DELETE SET NULL,
+    "posts_id" INTEGER REFERENCES "posts" ON DELETE CASCADE,
+    "comment_id" INTEGER REFERENCES "comments" ON DELETE CASCADE,
+    CONSTRAINT "have_content" CHECK(LENGTH(TRIM("text")) > 0 )
+);
+
+CREATE TABLE "votes" (
+    "id" SERIAL PRIMARY KEY,
+    "vote" SMALLINT NOT NULL,
+    "user_id" INTEGER REFERENCES "users" ON DELETE SET NULL,
+    "post_id" INTEGER REFERENCES "posts" ON DELETE CASCADE,
+    CONSTRAINT "type_of_votes" CHECK ("vote" = 1 OR "vote" = -1),
+    CONSTRAINT "unique_vote" CHECK ("user_id", "post_id")
 );
