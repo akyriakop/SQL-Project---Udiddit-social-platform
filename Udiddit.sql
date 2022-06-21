@@ -25,7 +25,6 @@ CREATE TABLE "posts"(
     CONSTRAINT "has_title" CHECK(LENGTH(TRIM("title"))>0),
     CONSTRAINT "url_text" CHECK (("url" IS NULL AND "text_content" IS NOT NULL) 
     OR ("url" IS NOT NULL AND "text_content" IS NULL)) 
-
 );
 CREATE INDEX ON "posts" (LOWER("title") VARCHAR_PATTERN_OPS);
 
