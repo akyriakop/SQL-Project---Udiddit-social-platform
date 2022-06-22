@@ -29,7 +29,7 @@ Having done this initial investigation and assessment, your next goal is to dive
      iii.The topic’s name can’t be empty
    
      iv.Topics can have an optional description of at most 500 characters.
-   
+     
    
   c.	Allow registered users to create new posts on existing topics:
   
@@ -95,5 +95,16 @@ Having done this initial investigation and assessment, your next goal is to dive
 3.	Guideline 3: you’ll need to use normalization, various constraints, as well as indexes in your new database schema. You should use named constraints and indexes to make your schema cleaner.
 
 4.	Guideline 4: your new database schema will be composed of five (5) tables that should have an auto-incrementing id as their primary key.
+
+## Migrate the provided data
+Now that your new schema is created, it’s time to migrate the data from the provided schema in the project’s SQL Workspace to your own schema. This will allow you to review some DML and DQL concepts, as you’ll be using INSERT...SELECT queries to do so. Here are a few guidelines to help you in this process:
+
+1.	Topic descriptions can all be empty
+2.	Since the bad_comments table doesn’t have the threading feature, you can migrate all comments as top-level comments, i.e. without a parent
+3.	You can use the Postgres string function regexp_split_to_table to unwind the comma-separated votes values into separate rows
+4.	Don’t forget that some users only vote or comment, and haven’t created any posts. You’ll have to create those users too.
+5.	The order of your migrations matter! For example, since posts depend on users and topics, you’ll have to migrate the latter first.
+6.	Tip: You can start by running only SELECTs to fine-tune your queries, and use a LIMIT to avoid large data sets. Once you know you have the correct query, you can then run your full INSERT...SELECT query.
+7.	NOTE: The data in your SQL Workspace contains thousands of posts and comments. The DML queries may take at least 10-15 seconds to run.
 
    
