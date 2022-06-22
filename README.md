@@ -94,6 +94,6 @@ Having done this initial investigation and assessment, your next goal is to dive
 
 3.	Guideline 3: you’ll need to use normalization, various constraints, as well as indexes in your new database schema. You should use named constraints and indexes to make your schema cleaner.
 
-4.	Guideline #: your new database schema will be composed of five (5) tables that should have an auto-incrementing id as their primary key.
+4.	Guideline 4: your new database schema will be composed of five (5) tables that should have an auto-incrementing id as their primary key.
 
    
