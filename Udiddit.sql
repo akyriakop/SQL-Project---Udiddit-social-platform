@@ -45,3 +45,18 @@ CREATE TABLE "votes" (
     CONSTRAINT "type_of_votes" CHECK ("vote" = 1 OR "vote" = -1),
     CONSTRAINT "unique_vote" CHECK ("user_id", "post_id")
 );
+
+ ### Migrate the provided data
+
+ INSERT INTO "users" ("username")
+   SELECT DISTINCT "username"
+   FROM "bad_posts"
+   UNION
+   SELECT DISTINCT "username"
+   FROM "bad_comments"
+   UNION
+   SELECT DISTINCT regexp_split_to_table ("upvotes", ',') AS "upvotes"
+   FROM "bad_posts"
+   UNION
+   SELECT DISTINCT regexp_split_to_table ("downvotes", ",") AS "downvotes"
+   FROM "bad_posts";
