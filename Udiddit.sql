@@ -46,7 +46,7 @@ CREATE TABLE "votes" (
     CONSTRAINT "unique_vote" CHECK ("user_id", "post_id")
 );
 
- ### Migrate the provided data
+ #Migrate the provided data
 
  INSERT INTO "users" ("username")
    SELECT DISTINCT "username"
@@ -60,3 +60,44 @@ CREATE TABLE "votes" (
    UNION
    SELECT DISTINCT regexp_split_to_table ("downvotes", ",") AS "downvotes"
    FROM "bad_posts";
+
+INSERT INTO "topics" ("topic_name")
+  SELECT DISTINCT "topic"
+  FROM "bad_posts";
+
+INSERT INTO "posts"("user_id", "title","url","text_content","topic_id")
+  SELECT "users"."id",
+         LEFT("bad_posts"."title",100),
+         "bad_posts"."url",
+         "bad_posts"."text_content",
+         "topics"."id"
+  FROM "bad_posts"
+  JOIN "users" ON "bad_posts"."username" = "users"."username"
+  JOIN "topics" ON "bad_posts"."topic" = "topics"."topic_name";
+  
+INSERT INTO "comments"("text","post_id", "user_id")
+  SELECT "bad_comments"."text_content",
+         "posts"."id",
+         "users"."id"
+  FROM "bad_comments"
+  JOIN "users" ON "bad_comments"."username" = "users"."username"
+  JOIN "posts" ON "bad_comments"."post_id" = "posts"."id";
+  
+INSERT INTO "votes"("vote","user_id", "post_id")
+  SELECT 1 AS "upvote",
+         "users"."id",
+         "u"."id"
+  FROM(SELECT "id", regexp_split_to_table("upvotes", ',') AS "up_users" FROM "bad_posts") "u"
+  JOIN "users" ON "users"."username" = "u"."up_users";
+  
+INSERT INTO "votes"("vote","user_id", "post_id")
+  SELECT -1 AS "upvote",
+         "users"."id",
+         "d"."id"
+  FROM(SELECT "id", regexp_split_to_table("downvotes", ',') AS "down_users" FROM "bad_posts") "d"
+  JOIN users ON users.username = d.down_users;
+  
+  
+DROP TABLE "bad_comments";
+DROP TABLE "bad_posts";
+
