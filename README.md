@@ -97,7 +97,7 @@ Having done this initial investigation and assessment, your next goal is to dive
 4.	Guideline 4: your new database schema will be composed of five (5) tables that should have an auto-incrementing id as their primary key.
 
 ## Migrate the provided data
-Now that your new schema is created, it’s time to migrate the data from the provided schema in the project’s SQL Workspace to your own schema. This will allow you to review some DML and DQL concepts, as you’ll be using INSERT...SELECT queries to do so. Here are a few guidelines to help you in this process:
+Now that your new schema is created, it’s time to migrate the data from the provided schema in the project’s SQL Workspace to your own schema. Here are a few guidelines:
 
 1.	Topic descriptions can all be empty
 2.	Since the bad_comments table doesn’t have the threading feature, you can migrate all comments as top-level comments, i.e. without a parent
